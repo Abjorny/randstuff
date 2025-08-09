@@ -1,0 +1,84 @@
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxWrapper {max-width:none;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#000;}
+#colorbox{outline:0;}
+#cboxContent{
+    margin: 20px;
+    padding: 15px;
+    overflow:visible;
+    background: #fff;
+    border-radius: 4px;
+}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadingGraphic{background: url('/public/images/loader2.gif') no-repeat center center;}
+#cboxCurrent{position:absolute; text-indent:-9999px;}
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+#cboxPrevious, #cboxNext, #cboxClose {border:0; padding:0; margin:0; overflow:visible; text-indent:-9999px;}
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+#cboxPrevious:active, #cboxNext:active, #cboxClose:active {outline:0;}
+
+#cboxPrevious,
+#cboxNext {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 35px;
+    height: 65px;
+    margin: -33px 0 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+
+#cboxPrevious {
+    left: -40px;
+    background: none no-repeat;
+}
+
+#cboxNext {
+    right: -40px;
+    background: none no-repeat;
+}
+
+#cboxClose{
+    position: absolute;
+    right: 10px;
+    top: -4px;
+    width: 51px;
+    height: 34px;
+    background: url("/public/images/dlg_close.png") no-repeat top center;
+}
+
+#cboxClose:hover{
+    background-position: bottom center;
+}
+
+#cboxTitle {
+    display: none;
+}

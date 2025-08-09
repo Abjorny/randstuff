@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" class="is-desktop">
+  {% include "includes/head.html" %}
+  <body>
+    <div id="wrapper">
+      {% include "includes/header.html" %}
+      <div id="page">
+        <div class="account">
+        <form class="signup" method="post" onsubmit="return false;">
+            <h1>Регистрация</h1>
+            <input
+              type="text"
+              name="name"
+              value=""
+              placeholder="Имя"
+              required=""
+            /><input
+              type="text"
+              name="email"
+              value=""
+              placeholder="E-mail"
+              required=""
+            /><input
+              type="password"
+              name="pass"
+              placeholder="Пароль"
+              required=""
+            /><input
+              type="password"
+              name="pass_again"
+              placeholder="Пароль еще раз"
+              required=""
+            /><label
+              ><input type="checkbox" name="privacy" /> Я согласен на обработку
+              персональных данных,<br />
+              и ознакомлен с
+              <a href="/privacy.html" target="_blank"
+                >политикой конфиденциальности</a
+              >.</label
+            ><button type="submit" name="signup">Создать аккаунт</button>или
+            <a href="/account/signin/">авторизоваться</a>
+          </form>
+        </div>
+      </div>
+      {% include "includes/footer.html" %}
+    </div>
+
+    {% include "includes/iframe.html" %} {% include "includes/scripts.html" %}
+  </body>
+</html>

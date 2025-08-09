@@ -1,0 +1,31 @@
+{
+  "originalUrl": "https://vk.com/widget_community.php?app=0&width=200px&_ver=1&gid=60549401&mode=0&color1=FFFFFF&color2=b30000&color3=000000&class_name=&height=320&url=https%3A%2F%2Frandstuff.ru%2Fnumber%2F&referrer=&title=RandStuff.ru%20-%20%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%D1%81%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D1%8B%D1%85%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD&19878cd4007",
+  "indexFilename": "index.html",
+  "resources": {
+    "stylesheet_0.css": "https://st6-20.vk.com/css/al/base.5729dd47.css",
+    "stylesheet_1.css": "https://st6-20.vk.com/dist/api/widgets/community.8d78121f.css",
+    "stylesheet_2.css": "https://st6-20.vk.com/dist/api/widgets/chunks/audioplayer-lib.92ba64b7.css",
+    "stylesheet_3.css": "https://st6-20.vk.com/dist/api/widgets/chunks/vkcom-kit.429bd852.css",
+    "stylesheet_4.css": "https://st6-20.vk.com/dist/web/likes.a553c0e3.css",
+    "stylesheet_5.css": "https://st6-20.vk.com/css/al/widget_community.d91e1f3e.css",
+    "stylesheet_6.css": "https://st6-20.vk.com/dist/web/audioplayer.8d78121f.css",
+    "stylesheet_7.css": "https://st6-20.vk.com/dist/web/ui_common.8d78121f.css",
+    "stylesheet_8.css": "https://st6-20.vk.com/dist/web/chunks/audioplayer-lib.c6355e93.css",
+    "stylesheet_9.css": "https://st6-20.vk.com/dist/web/chunks/vkcom-kit.e74c575a.css",
+    "stylesheet_10.css": "https://st6-20.vk.com/css/al/ui_common.47cdce79.css",
+    "stylesheet_11.css": "https://st6-20.vk.com/css/al/vkui.41b58281.css",
+    "stylesheet_12.css": "https://st6-20.vk.com/css/al/lite.df9f8ba6.css",
+    "stylesheet_13.css": "https://st6-20.vk.com/css/al/fonts_cnt.c7a76efe.css",
+    "images/4.png": "https://pp.userapi.com/94aVrHyY-wHPkZnMULeXIFx8l7bTfrHK4yPPBA/QulWsGFAn5k.png",
+    "images/8.jpg": "https://sun9-88.userapi.com/impg/c11173/u33740/d_ab02909e.jpg?quality=96&as=32x32,48x48,72x72&sign=82c03ea885ce8891b59fa32ce0e8b1c4&cs=50x50",
+    "images/3.jpg": "https://sun6-21.userapi.com/s/v1/ig1/J5OlbxjwHaBc5ov7KWNi2jBPPrqHH8r_BELzX9tNzZ8pCek6Oge5cMqeQIsGcBfSpcPvvuq_.jpg?quality=96&crop=0,0,220,220&as=32x32,48x48,72x72,108x108,160x160&ava=1&cs=50x50",
+    "images/5.jpg": "https://sun6-22.userapi.com/s/v1/ig2/WZ4jevyDDk09LMAUbmQ2cyc0N9Y__jfq-dinhI-tNbNw7lp3i8vV2ZU_BWy5yns-UB5IDmbGnogD8h2V_exN66fV.jpg?quality=95&crop=522,1175,958,958&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=50x50",
+    "images/7.jpg": "https://sun6-20.userapi.com/s/v1/ig2/NkyLtc7n5O40Jpt5VxrtcKe_Fzwf97CiRz7M78oifLDHyc4sGMdDZN9xONGAP1XKl4XZ-OUjyyDlDa2Ud7o_QVja.jpg?quality=95&crop=0,0,807,807&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=50x50",
+    "images/11.jpg": "https://sun6-21.userapi.com/s/v1/ig1/G-G_Qs7I4Us10xLr009ng6YQXIGNpiDvj7N77bpMfD0M6JxujluruO9CX2fgr0B7iuDB6Pq9.jpg?quality=96&crop=1,218,386,386&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&cs=50x50",
+    "images/13.jpg": "https://sun6-20.userapi.com/s/v1/ig2/KpAiS4HQ32_9tZLvXul2eo3Wh9ujQAa1ZaSqpeA2Vxn0ROyLyv_p9m80fsgenNY7FCd3b5WIjmtoCxp88qqPFkRF.jpg?quality=95&crop=356,782,1183,1183&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&ava=1&cs=50x50",
+    "images/9.jpg": "https://sun6-22.userapi.com/s/v1/ig2/RaQH9SM3YXTH1FF46vFDqAVShbSt6dJtp9z9IbnUbUAlSP_gYJbLlOJ6IuAmINlXyGj5SiEDb8lTQ2K2LoAesy1a.jpg?quality=96&crop=279,85,680,680&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640&ava=1&cs=50x50",
+    "images/10.jpg": "https://sun6-20.userapi.com/s/v1/ig1/dXQBu801NJuqb57GVM8rqT_lKGyR4ePXQiKmq7_7mCHNFf2reBbdvM0eYuCTFI2kGegyvrpF.jpg?quality=96&crop=26,0,1180,1180&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080&ava=1&cs=50x50",
+    "images/12.jpg": "https://sun6-20.userapi.com/s/v1/ig2/sqplwbmsImwKInXZAvg4XAOujrbX_BdR17vpJaqZe5atp9kjg3Zcz7pbYHnDBZuaDmviXthJP8fRsyb-nKb5noTf.jpg?quality=95&crop=2,0,1077,1077&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=50x50",
+    "images/6.jpg": "https://sun6-23.userapi.com/s/v1/ig1/v3Aa2g_onANO4uiUL3m0cX4YM67LV9LRF9_5uNSjlpWurJkriQuNdsUhCjIhOU577ZPc1oQC.jpg?quality=96&crop=4,5,858,858&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=50x50"
+  }
+}

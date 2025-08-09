@@ -1,0 +1,1191 @@
+/* General */
+
+.wrapper-img {
+    position: relative;
+    background-size: cover !important;
+    background-position: center  !important;
+    z-index: 0;
+}
+
+.wrapper-img:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: url("/public/images/wrap_bg.png");
+    opacity: 0.9;
+    z-index: -1;
+}
+
+/* Win form */
+
+.win-form {
+    margin: 40px 0 80px;
+}
+
+.win-form .top h1 {
+    margin: 0 auto 10px;
+    max-width: 800px;
+    font: 30px/34px 'Open Sans';
+}
+
+.win-form .top h1 span {
+    display: inline-block;
+    width: 200px;
+    height: 35px;
+    background: url("../../images/logo_vk.svg") center no-repeat;
+    background-size: cover;
+    margin: 0 0 0 3px;
+    vertical-align: middle;
+    text-indent: 100%;
+    overflow: hidden;
+}
+
+.winig-form .top h1 span {
+    height: 43px;
+    margin-bottom: -8px;
+    background-image: url("../../images/logo_ig.png");
+}
+
+.wintg-form .top h1 span {
+    width: 180px;
+    height: 43px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    background-image: url("../../images/logo_tg.png");
+}
+
+.win-form .top p {
+    margin: 0 0 30px;
+}
+
+.win-form .top .error {
+    display: block;
+    width: 490px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #ff3347;
+    color: #fff;
+    text-shadow: none;
+    font-size: 13px;
+}
+
+.win-form .top .error a {
+	color: #fff;
+	text-decoration: none;
+    border-bottom: solid 1px #fff;
+}
+
+.win-form .top .error a:hover {
+    border-bottom: solid 1px transparent;
+}
+
+.win-form .post {
+    width: 500px;
+    margin: 60px auto 0;
+}
+
+.win-form .post h2 {
+    margin: 0;
+    font: 18px/22px 'Open Sans';
+}
+
+.win-form .post .wrap {
+    position: relative;
+    padding: 0 0 22px;
+}
+
+.win-form .post .link {
+    position: relative;
+    margin: 15px 0 10px;
+    z-index: 1;
+}
+
+.win-form .post .link i {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: scale(0);
+    font-size: 22px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.win-form .post .link .fa-times,
+.win-form .post .link .fa-refresh {
+    left: auto;
+    top: 17px;
+    right: 15px;
+    font-size: 16px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.win-form .post .link .fa-refresh {
+    opacity: 0;
+}
+
+.win-form .post .link i.fa-link { color: #454545; }
+.win-form .post .link i.fa-check-circle { color: #4bb34b; }
+.win-form .post .link i.fa-exclamation-triangle { color: #FFB300; }
+.win-form .post .link i.fa-exclamation-circle { color: #ff3347; }
+.win-form .post .link i.fa-spinner { color: #454545; }
+.win-form .post .link i.fa-times { color: #454545; }
+
+.win-form .post .link.default i.fa-link { transform: scale(1); }
+.win-form .post .link.success i.fa-check-circle { transform: scale(1); }
+.win-form .post .link.warning i.fa-exclamation-triangle { transform: scale(1); }
+.win-form .post .link.error i.fa-exclamation-circle { transform: scale(1); }
+.win-form .post .link.load i.fa-refresh { opacity: 1; transition: opacity 0.2s ease-in-out 0.2s; }
+.win-form .post .link.default i.fa-times, .win-form .post .link.load i.fa-times { transform: scale(0); }
+
+.win-form .post .link input {
+    width: 420px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 5px 38px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px #cbcbcb;
+    background: #fff;
+    color: #000;
+    font: 15px 'Open Sans';
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: center;
+}
+
+.win-form .post .link input:focus {
+    box-shadow: 0 0 3px 2px #cbcbcb;
+}
+
+.win-form .post .status,
+.win-form .post .user,
+.win-form .post .counters {
+    position: absolute;
+    bottom: 40px;
+    transition: bottom 0.2s ease-in-out;
+}
+
+.win-form .post .status { left: 1px; right: 1px; }
+.win-form .post .user { left: 1px; }
+.win-form .post .counters { right: 1px; }
+
+.win-form .post .status.show,
+.win-form .post .user.show,
+.win-form .post .counters.show {
+    bottom: 0;
+}
+.winvk-form .post .status.show {
+    bottom: -10px;
+}
+
+
+.win-form .post .status a,
+.win-form .post .user span,
+.win-form .post .counters span {
+    position: relative;
+    background: #2887f5;
+    border-radius: 3px;
+    padding: 2px 5px 2px 4px;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: none;
+}
+
+.win-form .post .status a {
+    padding: 1px 5px 3px 4px;
+}
+
+.win-form .post .counters span {
+    display: inline-block;
+    height: 19px;
+    background: #a7adb7;
+    padding: 2px 4px 2px 5px;
+}
+
+.win-form .post .user b,
+.win-form .post .counters b {
+    font-weight: 400;
+}
+
+.win-form .post .user .name {
+    display: inline-block;
+    max-width: 150px;
+    height: 20px;
+    overflow: hidden;
+    vertical-align: top;
+    margin: 0;
+}
+
+.win-form .post .status i,
+.win-form .post .user i,
+.win-form .post .counters {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.win-form .post .user i,
+.win-form .post .counters .fa-comment {
+    position: relative;
+    top: -1px;
+}
+
+.win-form .post .user i {
+    cursor: pointer;
+}
+
+.win-form .settings {
+    display: none;
+}
+
+.win-form .settings h2 {
+    margin: 30px 0 0;
+    font: 18px/22px 'Open Sans';
+}
+
+.win-form .settings .filter {
+    width: 380px;
+    padding: 1px;
+    margin: 15px auto 0;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.win-form .settings .filter input {
+    display: none;
+}
+
+.win-form .settings .filter span {
+    position: relative;
+    display: inline-block;
+    width: 33.3333%;
+    height: 28px;
+    font: 15px/26px 'Open Sans';
+    text-shadow: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/*
+.winig-form .settings .filter span {
+    width: 50%;
+}
+*/
+
+.winig-form .settings .filter span, 
+.wintg-form .settings .filter span {
+    width: 100%;
+}
+
+.win-form .settings .filter input:checked + span {
+    background: #a7adb7;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.win-form .settings .filter label:nth-child(2) span::before,
+.win-form .settings .filter label:nth-child(2) span::after {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    display: block;
+    width: 1px;
+    background: #a7adb7;
+    content: "";
+}
+
+.winig-form .settings .filter label:nth-child(2) span::after {
+    display: none;
+}
+
+.win-form .settings .filter label:nth-child(2) span::before { left: -1px }
+.win-form .settings .filter label:nth-child(2) span::after { right: -1px }
+
+.win-form .settings .filter input:checked + span::before,
+.win-form .settings .filter input:checked + span::after {
+    display: none;
+}
+
+.win-form .settings .count,
+.win-form .settings .member,
+.win-form .settings .unique {
+    display: inline-block;
+    margin: 15px 5px 0;
+}
+
+.winig-form .settings .count,
+.wintg-form .settings .count {
+    margin: 15px 0 0 10px;
+}
+
+.win-form .settings .unique {
+    height: 20px;
+}
+
+.win-form .settings .count input {
+    width: 60px;
+    height: 24px;
+    margin: 0 10px 0 0;
+    padding: 1px 2px 1px 16px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    color: #000;
+    font: 15px 'Open Sans';
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: center;
+}
+
+.win-form .settings .count span {
+    display: inline-block;
+    width: 100px;
+    font: 15px/26px 'Open Sans';
+    text-align: left;
+}
+
+.win-form .settings .member input,
+.win-form .settings .unique input {
+    display: none;
+}
+
+.win-form .settings .member b,
+.win-form .settings .unique b {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    margin: 0 5px 0 0;
+    background: #fff;
+    box-shadow: 0 0 0 2px #a7adb7;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.win-form .settings .member b > i,
+.win-form .settings .unique b > i {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #454545;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.win-form .settings .member input:checked + b > i,
+.win-form .settings .unique input:checked + b > i {
+    transform: scale(1);
+}
+
+.winvk-form .settings .member span,
+.winig-form .settings .unique span,
+.wintg-form .settings .unique span {
+    font: 15px/26px 'Open Sans';
+    cursor: pointer;
+}
+
+.win-form .settings .end {
+    position: relative;
+    width: 380px;
+    padding: 1px;
+    margin: 15px auto 0;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.win-form .settings .end input {
+    display: none;
+}
+
+.win-form .settings .end span {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 28px;
+    font: 15px/26px 'Open Sans';
+    text-shadow: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.win-form .settings .end input:checked + span {
+    background: #a7adb7;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.win-form .settings .time {
+    position: relative;
+    width: 236px;
+    margin: -28px auto 0;
+    transition: margin-top 0.2s ease-in-out;
+}
+
+.win-form .settings .time.show {
+    margin-top: 0;
+}
+
+.win-form .settings .time input {
+    width: 186px;
+    height: 26px;
+    padding: 1px 23px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    color: #000;
+    font: 15px 'Open Sans';
+    text-align: center;
+    cursor: pointer;
+}
+
+.win-form .settings .time i {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #454545;
+    pointer-events: none;
+}
+
+.win-form .buttons {
+    display: none;
+    margin: 0 auto -20px;
+}
+
+.win-form .buttons .generate {
+    position: relative;
+    width: 280px;
+    height: 79px;
+    margin: 40px auto 0;
+    background: url("/public/images/but_winvk.png") left -1px no-repeat;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.win-form .buttons .generate:active {
+    background-position: left bottom;
+}
+
+.win-form .buttons .try {
+    font-size: 15px;
+    background: none;
+    padding: 0;
+    margin: 0 5px;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.win-form .buttons .try:hover {
+    text-decoration: none;
+}
+
+.win-top-slider {
+    margin: 0 auto 10px;
+}
+
+.win-top {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.win-top-slider .title {
+    font: 18px/22px 'Open Sans';
+    color: #000;
+    text-decoration: none;
+}
+
+.win-top h1 {
+    margin: 0 auto 20px;
+    font: 30px/34px 'Open Sans';
+}
+
+.win-top h1 span {
+    display: inline-block;
+    width: 200px;
+    height: 35px;
+    margin: 0 0 0 3px;
+    background: url("../svg/logo_vk.svg") center no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+    text-indent: 100%;
+    overflow: hidden;
+}
+
+.winig-top h1 span {
+    height: 43px;
+    margin-bottom: -8px;
+    background: url("../svg/logo_ig.png") center no-repeat;
+}
+
+.wintg-top h1 span {
+    width: 180px;
+    height: 43px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    background: url("../svg/logo_tg.png") center no-repeat;
+}
+
+.win-top-slider .list,
+.win-top .list {
+    margin: 10px auto 0;
+}
+
+.win-top-slider .list {
+    margin: 10px 0 5px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.win-top .list {
+    text-align: center;
+}
+
+.win-top-slider .more {
+    font-size: 14px;
+    color: #000;
+}
+
+.win-top-slider .list a,
+.win-top .list a {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-position: center;
+    background-size: cover;
+    background-color: #fff;
+}
+
+.win-top-slider .list a {
+    margin: 0 1px;
+}
+
+.win-top .list a {
+    width: 150px;
+    height: 150px;
+    margin: 3px 5px;
+    overflow: hidden;
+}
+
+.win-top-slider .list a:after,
+.win-top .list a:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.4;
+    content: "";
+    transition: opacity 0.2s ease-in-out;
+}
+
+.win-top-slider .list a:hover,
+.win-top .list a:hover {
+    z-index: 0.8;
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .5);
+}
+
+.win-top-slider .list a:hover:after,
+.win-top .list a:hover:after {
+    opacity: 0;
+}
+
+.win-top .list a span {
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: -31px 0 0 -31px;
+    border: 2px solid #2887f5;
+    border-radius: 50px;
+    background-position: center;
+    background-size: cover;
+    transition: top 0.2s ease-in-out;
+}
+
+.win-top .list a:hover span {
+    top: 50%;
+}
+
+.win-pay {
+    position: relative;
+    width: 600px;
+    margin: -20px auto 40px;
+    text-align: left;
+}
+
+.win-pay .step {
+    position: relative;
+    margin: 40px 0;
+    background: #fff;
+    box-shadow: 0 8px 10px -8px rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.win-pay .step .title {
+    padding: 10px 15px;
+    background: #0e1930;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+.win-pay .step .text {
+    padding: 10px 15px;
+}
+
+.win-pay .step1 p {
+    margin: 5px 0;
+}
+
+.win-pay .step1 b {
+    display: inline-block;
+    padding: 1px 6px 1px 5px;
+    border-radius: 3px;
+    background: #ff0052;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+	text-shadow: none;
+}
+
+.win-pay .step1 button {
+    position: relative;
+    top: -2px;
+    margin: 8px 8px 5px 0;
+    padding: 5px 10px;
+    height: 34px;
+    background: #0160D1;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+	font-size: 16px;
+    box-shadow: 0 0 0 2px #0160D1;
+    vertical-align: middle;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.win-pay .step1 button:hover {
+    box-shadow: 0 0 0 2px #00479C;
+}
+
+.win-pay .step1 button span {
+    display: inline-block;
+    width: 85px;
+    height: 20px;
+    margin: 0 3px;
+    background: url("../svg/logo_yookassa_w.svg");
+    background-size: cover;
+    vertical-align: middle;
+}
+
+.win-pay .step1 form div {
+	position: relative;
+    top: 2px;
+    display: inline-block;
+    margin: 0;
+}
+
+.win-pay .step1 form a {
+    color: #000;
+}
+
+.win-pay .step2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.win-pay .step2 li {
+    margin: 5px 0;
+}
+
+.win-pay .step2 i {
+    color: #0160D1;
+}
+
+.win-pay .step2 a {
+    color: #000;
+}
+
+.win-pay .step3 p {
+	margin: 5px 0;
+}
+
+.win-pay .step3 i {
+    color: #0160D1;
+}
+
+.win-pay .step3 a {
+    color: #000;
+}
+
+.win-pay .line {
+    position: absolute;
+    width: 25px;
+    border-radius: 4px;
+    border: 2px solid #0e1930;
+}
+
+.win-pay .line1 {
+    right: -25px;
+    top: 20px;
+    height: 178px;
+    border-left: none;
+}
+
+.win-pay .line2 {
+    left: -25px;
+    top: 200px;
+    height: 202px;
+    border-right: none;
+}
+
+.win-pay .line3 {
+    right: -25px;
+    top: 359px;
+    height: 147px;
+    border-left: none;
+}
+
+.win-result {
+    margin: -25px -20px 0;
+}
+
+.win-result .wrap {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.win-result .post {
+    position: relative;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.win-result .post h1 {
+    margin: 20px 0;
+    font: 30px/34px 'Open Sans';
+}
+
+.win-result .post:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: url("/public/images/wrap_bg.png");
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.win-result .post .author .image {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 3px solid #2887f5;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.win-result .post .author .image:hover {
+    box-shadow: 0 2px 3px -2px rgba(0, 0, 0, .8);
+}
+
+.win-result .post .author .image img {
+    width: inherit;
+    height: inherit;
+}
+
+.win-result .post .author .image iframe {
+    position: relative;
+    top: -26px;
+    left: -47px;
+    transform: scale(0.7);
+    pointer-events: none;
+}
+
+.win-result .post .text {
+    position: relative;
+    width: 480px;
+    margin: 20px auto 60px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    font: 14px 'Open Sans';
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.win-result .post .counters {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+}
+
+.win-result .post .counters span {
+    position: relative;
+    display: inline-block;
+    height: 19px;
+    background: #a7adb7;
+    padding: 2px 4px 2px 5px;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.win-result .post .counters .fa-comment {
+    position: relative;
+    top: -1px;
+}
+
+.win-result .post .link {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+}
+
+.win-result .post .link a {
+    position: relative;
+    display: inline-block;
+    height: 19px;
+    background: #2887f5;
+    padding: 2px 4px 2px 5px;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.win-result .post .link .fa-external-link {
+    position: relative;
+    top: 1px;
+}
+
+.win-result .users {
+    padding: 20px 20px 0;
+}
+
+.win-result .users .wrap {
+    margin-bottom: 40px;
+}
+
+.win-result .users h2 {
+    margin: 20px 0 30px;
+    font: 30px/34px 'Open Sans';
+}
+
+.win-result .users h3 {
+    margin: 30px 0 20px;
+    font: 18px/22px 'Open Sans';
+}
+
+.win-result .users .try,
+.win-result .users .error,
+.win-result .users .wait {
+    display: block;
+    width: 480px;
+    margin: 20px auto 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #ff3347;
+    color: #fff;
+    text-shadow: none;
+    font-size: 13px;
+}
+.win-result .users .wait {
+    background: #FFB300;
+}
+
+.win-result .users .try i,
+.win-result .users .wait i,
+.win-result .users .error i {
+    position: relative;
+    top: 2px;
+    font-size: 18px;
+    margin: 0 10px 0 0;
+}
+
+.win-result .users .winners {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.win-result .users .winners li {
+    display: inline-block;
+    width: 120px;
+    margin: 0 5px 10px;
+    vertical-align: top;
+}
+
+.win-result .users .winners li .image {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 3px solid #a7adb7;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.win-result .users .winners li .image img {
+    width: inherit;
+    height: inherit;
+}
+
+.win-result .users .winners li .image iframe {
+    position: relative;
+    top: -26px;
+    left: -47px;
+    transform: scale(0.7);
+    pointer-events: none;
+}
+
+.win-result .users .winners li .number {
+    position: relative;
+    top: -15px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    background: #ff3347;
+    font-style: normal;
+    text-shadow: none;
+    border-radius: 20px;
+    line-height: 24px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    z-index: 1;
+}
+
+.win-result .users .winners li .name {
+    display: inline-block;
+    max-width: 110px;
+    padding: 5px;
+    background: #a7adb7;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: none;
+    position: relative;
+    top: -20px;
+    font: 12px/14px 'Open Sans';
+    transition: box-shadow 0.2s ease-in-out;
+    overflow-wrap: break-word;
+}
+
+.win-result .users .winners li:hover .image,
+.win-result .users .winners li:hover .name {
+    box-shadow: 0 2px 3px -2px rgba(0, 0, 0, .8);
+}
+
+.win-result .users .winners li.first {
+    display: block;
+    margin: 0 auto;
+}
+
+.win-result .users .winners li.first .image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 3px solid #2887f5;
+}
+
+.win-result .users .winners li.first .name {
+    background: #2887f5;
+}
+
+.win-result .users .winners li.first .number {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 20px;
+}
+
+.win-result .users .share input {
+    width: 280px;
+    height: 24px;
+    margin: 10px 0;
+    padding: 1px 2px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px #a7adb7;
+    background: #fff;
+    color: #000;
+    font: 15px 'Open Sans';
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px)
+{
+    .win-form .top .error {
+        width: auto;
+        max-width: 480px;
+    }
+
+    .win-form .post {
+        width: auto;
+        max-width: 600px;
+    }
+
+    .win-form .post .wrap {
+        margin: 0 auto 60px;
+    }
+
+    .win-form .post .link input {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 14px;
+        padding: 5px 28px 5px 38px;
+    }
+
+    .win-form .post .link i {
+        left: 10px;
+        top: 10px;
+    }
+
+    .win-form .post .link .fa-times {
+        right: 10px;
+        top: 12px;
+    }
+
+    .win-form .post .status {
+        bottom: 30px;
+    }
+    .win-form .post .status.show {
+        bottom: -15px;
+    }
+    .winvk-form .post .status.show {
+		bottom: -20px;
+	}
+
+    .win-form .post .counters.show {
+        left: 0;
+    }
+
+    .win-form .post .user.show {
+        bottom: -30px;
+        right: 0;
+    }
+
+    .win-form .settings .count input {
+        width: 32px;
+        padding: 1px 2px;
+    }
+
+    .win-form .settings .count span {
+        width: 80px;
+    }
+
+    .win-form .settings .filter,
+    .win-form .settings .end {
+        width: auto;
+        max-width: 600px;
+        font-size: 14px;
+    }
+
+    .win-form .settings .count input,
+    .win-form .settings .count span,
+    .win-form .settings .member span,
+    .win-form .settings .unique span,
+    .win-form .settings .filter span,
+    .win-form .settings .end span {
+        font-size: 13px;
+    }
+
+	.win-pay-top {
+		display: none;
+	}
+
+    .win-top .list a {
+        width: 130px;
+        height: 130px;
+    }
+
+    .win-pay .line {
+        display: none;
+    }
+
+    .win-pay .step1 button{
+        padding: 5px;
+		width: 290px;
+		margin: 15px auto 10px;
+    }
+
+    .win-pay .step1 button span {
+        width: 75px;
+        height: 18px;
+        margin: 0;
+    }
+
+    .win-pay,
+    .win-result .post .text,
+    .win-result .users .try,
+    .win-result .users .error,
+    .win-result .users .wait {
+        width: auto;
+        max-width: 600px;
+    }
+}
+
+#winvk-rule {
+    border-bottom: dashed 1px #fff;
+    cursor: pointer;
+}
+#winvk-rule:hover {
+    border-bottom: solid 1px transparent;
+}
+
+.win-form .post .status a.vk-login {
+	display: inline-block;
+	padding: 6px 24px;
+	border-radius: 8px;
+	background-color: #07f;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	white-space: nowrap;
+}
+.win-form .post .status a.vk-login:hover {
+	background-color: #2483e4;
+}
+.win-form .post .status a.vk-login i {
+	position: relative;
+    top: -1px;
+	display: inline-block;
+	width: 18px;
+    height: 18px;
+	margin-right: 6px;
+	background: url("/public/images/vk_logo.svg");
+	background-size: contain;
+	vertical-align: middle;
+}

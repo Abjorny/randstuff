@@ -1,0 +1,256 @@
+#caption {
+    margin-top: 50px;
+}
+#button.wheel {
+    margin-bottom: 30px;
+    background-image: url("../../images/wheel_btn.png");
+}
+
+#wheel {
+    position: relative;
+    max-width: 800px;
+    box-sizing: border-box;
+    padding: 0 0 0 400px;
+    margin: 0 auto;
+}
+#wheel .left {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    bottom: 20px;
+    right: 200px;
+    padding: 10px 40px;
+    background: #ffffffbf;
+    border-radius: 20px;
+    box-shadow: -2px 3px 10px rgba(0, 0, 0, .1);
+    text-align: left;
+    z-index: 1;
+}
+#wheel h2 {
+    font: 20px / 24px 'Open Sans';
+}
+#wheel .clear {
+    width: 300px;
+    margin: -38px 0 12px;
+    text-align: right;
+}
+#wheel .clear span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../images/trash_icon.png") center no-repeat;
+    cursor: pointer;
+}
+#wheel .values {
+    width: 300px;
+    height: 186px;
+    box-sizing: border-box;
+    margin: 0 0 -5px;
+    padding: 4px 4px 4px 34px;
+    background: #fff;
+    border: solid 1px #b6b6b6;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 #fff, inset 0 1px 6px -2px rgba(0, 0, 0, .5);
+    line-height: 16px;
+    resize: none;
+
+    background-image: url("../../images/lines.png");
+    background-position: 0 -7px;
+    background-attachment: local;
+    background-repeat: no-repeat;
+}
+#wheel .error {
+    display: none;
+    margin-bottom: -20px;
+    font-size: 12px;
+    width: 300px;
+    text-align: right;
+    color: #f00;
+}
+#wheel .presets {
+    width: 300px;
+}
+#wheel .presets a {
+    display: inline-block;
+    margin: 0 10px 5px 0;
+    border-bottom: dashed 1px #b30000;
+    color: #b30000;
+    white-space: nowrap;
+    cursor: pointer;
+}
+#wheel .presets a:hover {
+    border-bottom: solid 1px transparent;
+}
+#wheel .right {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    margin: 30px auto;
+    border-radius: 50%;
+    box-shadow: -2px 3px 10px rgba(0, 0, 0, .1);
+    z-index: 2;
+}
+#wheel .right:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    display: block;
+    border-radius: 50%;
+    box-shadow: inset 4px 8px rgba(0, 0, 0, .25);
+    content: "";
+}
+#wheel .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: -14.5px 0 0 -15px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 3px rgba(0, 0, 0, .25);
+	z-index: 1;
+}
+#wheel .arrow {
+    position: absolute;
+    top: calc(50% + 0.5px);
+    right: -2px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    transform: translate(-50%, -50%) rotate(45deg);
+    content: "";
+    z-index: 1;
+}
+#wheel .circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: solid 10px #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#wheel .circle li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: solid 1px #fff;
+    transform-origin: 0 50%;
+}
+#wheel .circle.single li {
+    clip-path: none !important;
+    left: 0;
+    width: 100%;
+    border-left: none;
+}
+#wheel .circle li div {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 0 10px 0 0;
+    text-align: right;
+    transform-origin: 0 0;
+}
+#wheel .circle li div span {
+    position: relative;
+    top: -10px;
+    display: inline-block;
+    max-width: 125px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-weight: 700;
+    line-height: 20px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .5);
+}
+#wheel .circle.sm li div span {
+    top: -12px;
+    max-width: 90px;
+    font-size: 12px;
+    font-weight: 400;
+}
+#wheel .circle.xs li div span {
+    max-width: 70px;
+    font-size: 10px;
+}
+#wheel .circle.xxs li div span {
+    max-width: 50px;
+    font-size: 8px;
+}
+
+@media screen and (max-width: 920px) {
+    #wheel {
+        padding: 0;
+    }
+	#wheel .right {
+        margin: 20px auto 20px;
+    }
+    #wheel .left {
+        position: static;
+        max-width: 300px;
+        margin: 0 auto 20px;
+        padding: 15px 20px;
+    }	
+	#wheel h2 {
+		margin: 0 0 10px;
+	}
+	#wheel .clear {
+		margin: -32px 0 8px;
+	}
+    #wheel .values {
+		margin: 0 auto 10px;
+	}
+}
+@media screen and (max-width: 460px) {
+    #wheel .right {
+        width: 380px;
+        height: 380px;
+    }
+    #wheel .clear,
+    #wheel .values,
+    #wheel .error,
+    #wheel .presets {
+        width: 100%;
+    }
+    #wheel .values {
+        height: 122px;
+    }
+}
+@media screen and (max-width: 420px) {
+    #wheel .right {
+        width: 320px;
+        height: 320px;
+    }
+    #wheel .circle li div span {
+        top: -12px;
+        max-width: 90px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+@media screen and (max-width: 360px) {
+    #wheel .right {
+        width: 280px;
+        height: 280px;
+    }
+    #wheel .circle li div span {
+        max-width: 70px;
+        font-size: 10px;
+    }
+}

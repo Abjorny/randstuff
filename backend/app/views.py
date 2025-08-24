@@ -6,6 +6,7 @@ import app.serializers as serializers
 from django.db.models import Q
 import random
 import string
+import re
 
 class IndexView(APIView):
     def get(sefl, request):
@@ -234,6 +235,26 @@ class CheckList(APIView):
     def get(self, request):
         return render(request, "checkList.html")
 
+def parse_int_list(value):
+
+    if not value:
+        return []
+
+    if isinstance(value, str):
+        parts = re.split(r"[+\n, ]+", value)
+    elif isinstance(value, list):
+        parts = value
+    else:
+        parts = [str(value)]
+
+    result = []
+    for x in parts:
+        x = x.strip()
+        if x.isdigit():
+            result.append(int(x))
+    return result
+
+
 class GenerateNumberView(APIView):
     def post(self, request):
         result = {"number": []}
@@ -243,19 +264,13 @@ class GenerateNumberView(APIView):
 
         start = int(request.data.get("start", 0))
         end = int(request.data.get("end", 100))
-
-        list_numbers = request.data.get("list", [])
-        if list_numbers:
-            list_numbers = list_numbers.split("\n")
-
         unique = int(request.data.get("unique", 0))
-        exclude_list = request.data.get("exclude_list", [])
-        if exclude_list:
-            exclude_list = exclude_list.split("\n")
 
-        exclude_list = list(map(int, exclude_list))
-        list_numbers = list(map(int, list_numbers)) if list_numbers else []
+        list_numbers = parse_int_list(request.data.get("list"))
+        exclude_list = parse_int_list(request.data.get("exclude_list"))
 
+        print("list_numbers =", list_numbers)
+        print("exclude_list =", exclude_list)
         # Формируем доступные числа
         if from_value == "range":
             available = list(range(start, end + 1))

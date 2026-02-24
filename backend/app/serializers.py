@@ -1,5 +1,12 @@
 from rest_framework import serializers
-from .models import AskModel, QuestionModel, FactModel, SayingModel
+from .models import AskModel, QuestionModel, FactModel, SayingModel, ComplimentModel
+
+
+class ComplimentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ComplimentModel
+        fields = "__all__"
+        
 
 class AskSerializer(serializers.ModelSerializer):
     class Meta:

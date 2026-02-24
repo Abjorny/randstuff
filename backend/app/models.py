@@ -8,6 +8,15 @@ class AskModel(models.Model):
     def __str__(self):
         return self.question
 
+class ComplimentModel(models.Model):
+    CHOICES = (
+        ('him', 'him'),
+        ('her', 'her'),
+    )
+    name = models.CharField(max_length=255)
+    for_how = models.CharField(max_length=255, choices = CHOICES)
+
+
 
 class QuestionModel(models.Model):
     text = models.TextField(verbose_name="Текст вопроса")

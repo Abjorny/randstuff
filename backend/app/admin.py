@@ -1,7 +1,15 @@
 from django.contrib import admin
-from .models import QuestionModel, FactModel, SayingModel, Number
+from .models import QuestionModel, FactModel, SayingModel, Number, ComplimentModel
 from adminsortable2.admin import SortableAdminMixin
 from django.utils.html import format_html
+
+
+@admin.register(ComplimentModel)
+class ComplimentAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")
+    search_fields = ("name",)
+    list_filter = ("for_how", )
+
 
 @admin.register(Number)
 class NumberAdmin(SortableAdminMixin, admin.ModelAdmin):

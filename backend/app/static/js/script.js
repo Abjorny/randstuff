@@ -23,7 +23,7 @@ $(document).ready(function () {
   });
   setTimeout(function () {
     $(".ya-share2__container_mobile").removeClass(
-      "ya-share2__container_mobile"
+      "ya-share2__container_mobile",
     );
   }, 10);
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
       $("#slider-val").text(
         $("#slider").data("val") +
           " " +
-          wordCount($("#slider").data("val"), words)
+          wordCount($("#slider").data("val"), words),
       );
     },
     slide: function (event, ui) {
@@ -374,7 +374,7 @@ $(document).ready(function () {
               data.saying.text +
                 '<span class="author">— ' +
                 data.saying.author +
-                "</span>"
+                "</span>",
             )
             .animate({ opacity: 1 }, 200);
 
@@ -485,7 +485,7 @@ $(document).ready(function () {
                 "</b> " +
                 data.last[i].prediction +
                 "</dd>" +
-                "</dl>"
+                "</dl>",
             );
           }
 
@@ -765,7 +765,7 @@ $(document).ready(function () {
               : minutes + " " + wordCount(minutes, minutesWords) + " ") +
             seconds +
             " " +
-            wordCount(seconds, secondsWords)
+            wordCount(seconds, secondsWords),
         )
         .attr("data-wait", wait - 1);
 
@@ -950,7 +950,7 @@ $(document).ready(function () {
       var url = new URL(elem.attr("href"));
       url.searchParams.set(
         "url",
-        location.origin + "/doings/?h=" + getDoingsHash()
+        location.origin + "/doings/?h=" + getDoingsHash(),
       );
       elem.attr("href", url.toString());
     });
@@ -990,7 +990,7 @@ $(document).ready(function () {
     },
     function () {
       $(this).closest(".plan").removeClass("plan-bg");
-    }
+    },
   );
 
   $(".account .menu .sections .list").on("scroll", function () {
@@ -1006,5 +1006,57 @@ $(document).ready(function () {
   $(".cookies-informer button").on("click", function () {
     $.cookie("cia", "1", { expires: 365, path: "/" });
     $(".cookies-informer").remove();
+  });
+
+  $("#button.compliment-button").click(function () {
+    var caption = $("#caption");
+    var container = $("#compliment");
+
+    var type = $('input[name="for"]:checked').val();
+
+    $.ajax({
+      url: "/compliment/",
+      type: "POST",
+      data: { for: type },
+      success: function (data) {
+        if (!data.error) {
+          if (type == "him") {
+            caption.text(caption.data("cap2"));
+          } else {
+            caption.text(caption.data("cap1"));
+          }
+
+          var compliment = String(data.compliment.name);
+          compliment.split("");
+
+          var html = '<span class="new">';
+          for (var i = 0; i < compliment.length; i++) {
+            html += "<span>" + compliment.charAt(i) + "</span>";
+          }
+          html += "</span>";
+
+          container.find(".new").attr("class", "cur");
+          container.find(".cur").remove();
+          container.append(html);
+
+          var i = 1;
+          container.find(".new span").each(function () {
+            $(this)
+              .delay(parseInt(200 / compliment.length) * i++)
+              .animate({ bottom: 0 }, 200, "easeOutQuint");
+          });
+        }
+      },
+    });
+  });
+
+  $("#compliment-copy").click(function () {
+    var text = $("#caption").text() + " " + $("#compliment").text() + "!";
+    navigator.clipboard.writeText(text);
+
+    $("#compliment-copy span").text("скопированно!");
+    setTimeout(function () {
+      $("#compliment-copy span").text("скопировать");
+    }, 3000);
   });
 });

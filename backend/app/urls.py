@@ -29,6 +29,11 @@ urlpatterns = [
     path("ticket/", views.Ticket.as_view(), name = "ticket"),
     path('ticket/generate/', views.TicketGenerateView.as_view(), name='ticket-generate'),
     
+    
+    path("compliment/", views.Сompliment.as_view(), name = "compliment"),
+    
+
+
     path("fact/", views.Fact.as_view(), name = "fact"),
     path("fact/generate/", views.FactGenerateView.as_view(), name="fact-generate"),
     path("fact/vote/", views.FactVoteView.as_view(), name="fact-vote"),

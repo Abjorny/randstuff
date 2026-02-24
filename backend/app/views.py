@@ -1,21 +1,48 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from app.models import QuestionModel, TicketStat, AskModel, FactModel, SayingModel, Number
+from app.models import QuestionModel, TicketStat, AskModel,\
+    FactModel, SayingModel, Number, ComplimentModel
 import app.serializers as serializers
-from django.db.models import Q
-import random
-import string
-import re
+import random, string, re
+
+def get_random_meta():
+    variants = [
+        {
+            "title": "RandStuff - онлайн рандомайзеры и генераторы случайных чисел и других данных",
+            "icon": "images/soc_img.png"
+        },
+        {
+            "title": "RandStuff.ru - Генератор случайных чисел онлайн",
+            "icon": "images/29.ico"
+        }
+    ]
+
+    return random.choice(variants)
 
 class IndexView(APIView):
     def get(sefl, request):
-        return render(request, "index.html")
+        return render(request, "index.html", {"meta": get_random_meta()})
+    
+
+
+
+class Сompliment(APIView):
+    def get(self, request):
+        compliment = ComplimentModel.objects.order_by("?").first()
+        data = serializers.ComplimentSerializer(compliment).data
+        return render(request, "complinent.html", {"meta": get_random_meta(), "compliment": data})
+    
+    def post(self, request):
+        for_how = request.data.get("for", "him")
+        compliment = ComplimentModel.objects.filter(for_how = for_how).order_by("?").first()
+        data = serializers.ComplimentSerializer(compliment).data
+        return Response({"compliment": data})
 
 class FactFavVIew(APIView):
     def get(self, request):
         fact = FactModel.objects.order_by("-likes").first()
-        return render(request, "fact_fav.html", {"fact": fact})
+        return render(request, "fact_fav.html", {"fact": fact, "meta": get_random_meta()})
 
 class FactGenerateView(APIView):
     def post(self, request):
@@ -26,7 +53,7 @@ class FactGenerateView(APIView):
 class SayingFavView(APIView):
     def get(self, request):
         saying = SayingModel.objects.order_by("-likes").first()
-        return render(request, "saying_fav.html", {"saying": saying})
+        return render(request, "saying_fav.html", {"saying": saying, "meta": get_random_meta()})
 
 class SayingGenerateView(APIView):
     def post(self, request):
@@ -123,7 +150,7 @@ class AnswerView(APIView):
 
 class Question(APIView):
     def get(self, request):
-        return render(request, "question.html")
+        return render(request, "question.html", {"meta": get_random_meta()})
 
 class QuestionGenerate(APIView):
     def post(self, request):
@@ -134,35 +161,35 @@ class QuestionGenerate(APIView):
 
 class Saying(APIView):
     def get(self, request):
-        return render(request, "saying.html")
+        return render(request, "saying.html", {"meta": get_random_meta()})
 
 class Ticket(APIView):
     def get(sefl, request):
-        return render(request, "ticket.html")
+        return render(request, "ticket.html", {"meta": get_random_meta()})
 
 class Fact(APIView):
     def get(self, request):
-        return render(request, "fact.html")
+        return render(request, "fact.html", {"meta": get_random_meta()})
 
 class WinVK(APIView):
     def get(self, request):
-        return render(request, "win/winvk.html")
+        return render(request, "win/winvk.html", {"meta": get_random_meta()})
 
 class WinTG(APIView):
     def get(self, request):
-        return render(request, "win/wintg.html")
+        return render(request, "win/wintg.html"), {"meta": get_random_meta()}
 
 class WinIG(APIView):
     def get(self, request):
-        return render(request, "win/winig.html")
+        return render(request, "win/winig.html", {"meta": get_random_meta()})
         
 class SignupView(APIView):
     def get(self, request):
-        return render(request, "authorise/signup.html")
+        return render(request, "authorise/signup.html", {"meta": get_random_meta()})
 
 class SigninView(APIView):
     def get(self, request):
-        return render(request, "authorise/signin.html")
+        return render(request, "authorise/signin.html", {"meta": get_random_meta()})
 
 class PasswordGenerateView(APIView):
     def post(self, request):
@@ -197,11 +224,11 @@ class Password(APIView):
                 chars += list("!@#$%^&*()_+-=[]{}|;:,.<>?")
 
             password = ''.join(random.choice(chars) for _ in range(length))
-            return render(request, "password.html", {"password" : password})
+            return render(request, "password.html", {"password" : password, "meta": get_random_meta()})
 
 class Wheel(APIView):
     def get(self, request):
-        return render(request, "wheel.html")
+        return render(request, "wheel.html", {"meta": get_random_meta()})
 
 class AskLast(APIView):
     def post(self, request):
@@ -224,16 +251,16 @@ class AskGenerate(APIView):
 
 class Ask(APIView):
     def get(self, request):
-        return render(request, "ask.html")
+        return render(request, "ask.html", {"meta": get_random_meta()})
 
 class NumberView(APIView):
     def get(self, request):
         value = random.randint(1, 100)
-        return render(request, "number.html", { "number" : value}) 
+        return render(request, "number.html", { "number" : value, "meta": get_random_meta()}) 
 
 class CheckList(APIView):
     def get(self, request):
-        return render(request, "checkList.html")
+        return render(request, "checkList.html", {"meta": get_random_meta()})
 
 def parse_int_list(value):
 

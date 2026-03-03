@@ -1059,4 +1059,8 @@ $(document).ready(function () {
       $("#compliment-copy span").text("скопировать");
     }, 3000);
   });
+  $('#number-from input[name="from"][value="range"]')
+  .prop('checked', true)
+  .trigger('change');
 });
+

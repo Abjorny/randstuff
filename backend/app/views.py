@@ -24,7 +24,10 @@ class IndexView(APIView):
     def get(sefl, request):
         return render(request, "index.html", {"meta": get_random_meta()})
     
-
+class WellView(APIView):
+    def get(sefl, request):
+        return render(request, "well.html", {"meta": get_random_meta()})
+    
 
 
 class Сompliment(APIView):

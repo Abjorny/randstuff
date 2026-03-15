@@ -16,6 +16,7 @@ urlpatterns = [
     path("winvk/", views.WinVK.as_view(), name = "winvk"),
     path("wintg/", views.WinTG.as_view(), name = "wintg"),
     path("winig/", views.WinIG.as_view(), name = "winig"),
+    path("well/", views.WellView.as_view(), name = "well"),
 
     path("question/", views.Question.as_view(), name = "question"),
     path("question/generate/", views.QuestionGenerate.as_view(), name = "question-generate"),

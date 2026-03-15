@@ -1,0 +1,415 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" class="is-desktop">
+  {% include "includes/head.html" %}
+  <style>
+    :root {
+	--yellow: #ffbe00;
+	--red: #e63950;
+	--blue: #0160D1;
+	--black: #2f2f39;
+	--gray-white: #ffffffdf;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+	min-height: 100dvh;
+}
+
+#page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page > .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#page > .content::after {
+	display: none;
+}
+
+.well-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+	margin: 0;
+}
+
+.well-container {
+    background: var(--gray-white);
+	margin: 35px 0;
+	padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: -2px 3px 10px rgba(0, 0, 0, .1);
+	width: 100%;
+	max-width: 760px;
+	text-align: center;
+}
+
+.well-wrap h1 {
+	color: var(--black);
+	margin: 0 0 35px;
+	font-size: 30px;
+	line-height: 34px;
+	font-weight: 400;
+}
+
+/* Прогресс-бар */
+
+.progress-wrapper {
+	margin: 20px 0;
+}
+
+.progress-bg {
+	background: #eee;
+	height: 18px;
+	border-radius: 9px;
+	overflow: hidden;
+}
+
+#bar {
+	width: 0%;
+	height: 100%;
+	background: var(--yellow);
+	transition: width 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#status-text {
+	font-size: 14px;
+	line-height: 18px;
+	color: var(--black);
+	margin: 15px 0;
+	min-height: 36px;
+}
+
+/* Кнопки */
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.well-wrap button {
+	padding: 15px 25px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+	text-transform: uppercase;
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+#main-btn {
+	background: var(--yellow);
+	color: var(--black);
+	min-width: 280px;
+}
+
+#main-btn:hover {
+	box-shadow: 0 0 0 2px #ffd650;
+}
+
+#main-btn:disabled {
+	background: var(--blue);
+	color: #fff;
+	cursor: not-allowed;
+	box-shadow: none !important;
+}
+
+#yes-btn {
+	background: var(--yellow);
+	color: var(--black);
+	margin-right: 10px;
+}
+
+#no-btn {
+	background: #ddd;
+	color: var(--black);
+}
+
+#yes-btn:hover {
+	box-shadow: 0 0 0 2px #ffd650;
+}
+
+#no-btn:hover {
+	box-shadow: 0 0 0 2px #f2f2f2;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.error-state #bar {
+	background: var(--red);
+}
+
+.error-state #status-text {
+	color: var(--red);
+}
+
+.error-state #main-btn {
+	background: var(--red);
+	color: #fff;
+	opacity: 1 !important;
+	filter: none !important;
+}
+
+.error-state #main-btn:hover {
+    box-shadow: 0 0 0 2px #f5b0b9;
+}
+
+/* Сертификат */
+
+#cert {
+	max-width: 500px;
+	margin: 0 auto;
+	border: 5px double var(--blue);
+	padding: 30px;
+	background: var(--gray-white);
+	margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#cert:before {
+	content: "ПЕЧАТЬ \A СУДЬБЫ";
+    white-space: pre-wrap;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    border: 3px double var(--blue);
+    border-radius: 50%;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    transform: rotate(-15deg);
+    opacity: 0.3;
+    line-height: 1.2;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+#cert h3 {
+	color:var(--blue); 
+	margin: 0 0 25px;
+}
+
+#cert p {
+	margin: 0 0 10px;
+}
+
+.achievements-list {
+	text-align: left;
+	font-size: 14px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.randstuff {
+	font-size: 12px;
+	color: #999;
+	margin: 20px 0 0 !important;
+}
+
+#cert-btns {
+	margin-top: 20px;
+}
+
+#save-btn {
+	background: var(--yellow);
+	color: var(--black);
+	margin-right: 10px;
+}
+
+#retry-btn {
+	background: #ddd;
+	color: var(--black);
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+#save-btn:hover {
+	box-shadow: 0 0 0 2px #ffd650;
+}
+
+#retry-btn:hover {
+	box-shadow: 0 0 0 2px #f2f2f2;
+}
+
+/* Адаптив для мобилок */
+
+@media (max-width: 480px) {
+	.well-wrap {
+		min-height: 360px;
+	}
+
+	.well-container {
+		padding: 40px 20px;
+	}
+
+	.well-wrap h1 {
+		font-size: 26px;
+		line-height: 30px;
+	}
+
+	#decision-btns,
+	#cert-btns {
+		gap: 10px;
+        display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.well-wrap button {
+		width: 100%;
+		margin-right: 0 !important;
+		justify-content: center;
+	}
+
+	#cert {
+		padding: 15px !important;
+		width: 100% !important;
+		box-sizing: border-box;
+	}
+}
+
+/* Скачать в ios */
+
+#ios-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 10000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+#ios-overlay img {
+	max-width: 100%;
+	border: 2px solid var(--blue);
+	border-radius: 8px;
+}
+
+#ios-overlay p {
+	margin-top: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#close-overlay {
+	margin-top: 20px;
+	background: var(--red);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+  </style>
+  <body>
+    <div id="wrapper">
+      {% include "includes/header.html" %}
+<div id="page"><div class="content"><div id="yandex_rtb_R-A-1574273-5" class="rtb-td" style="display: block;"></div>
+<div id="yandex_rtb_R-A-1574273-18" class="rtb-tm"></div>
+<script>
+    if (window.screen.width >= 728) {
+        document.getElementById('yandex_rtb_R-A-1574273-5').style.display = 'block';
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1574273-5',
+                blockId: 'R-A-1574273-5'
+            })
+        })
+    }
+    if (window.screen.width < 728) {
+        document.getElementById('yandex_rtb_R-A-1574273-18').style.display = 'block';
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1574273-18',
+                blockId: 'R-A-1574273-18'
+            })
+        })
+    }
+</script>
+<div class="well-wrap"><div class="well-container" id="app"><h1 id="title">Генератор безусловного счастья</h1><div id="progress-box" class="progress-wrapper"><div id="bar-bg" class="progress-bg hidden"><div id="bar"></div></div><p id="status-text">Внимание: возможен внезапный прилив оптимизма!</p></div><div class="controls"><button id="main-btn">Сделать хорошо</button><div id="decision-btns" class="hidden"><button id="yes-btn">Да, вперед!</button><button id="no-btn">Нет, я передумал.</button></div></div><div id="final-result" class="hidden"></div></div></div><div id="yandex_rtb_R-A-1574273-6" class="rtb-bd" style="display: block;"></div>
+<div id="yandex_rtb_R-A-1574273-19" class="rtb-bm"></div>
+<script>
+    if (window.screen.width >= 728) {
+		document.getElementById('yandex_rtb_R-A-1574273-6').style.display = 'block';
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1574273-6',
+                blockId: 'R-A-1574273-6'
+            })
+        })
+    }
+    if (window.screen.width < 728) {
+		document.getElementById('yandex_rtb_R-A-1574273-19').style.display = 'block';
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                renderTo: 'yandex_rtb_R-A-1574273-19',
+                blockId: 'R-A-1574273-19'
+            })
+        })
+    }
+</script>
+</div></div>
+
+
+      {% include "includes/footer.html" %}
+    </div>
+
+    {% include "includes/iframe.html" %} {% include "includes/scripts.html" %}
+    <script>
+$(document).ready(function() {
+    var container = $('#ticket');
+    var stat = $('#ticket-stat');
+
+    $.ajax({
+        url: '/ticket/generate/',
+        type: 'POST',
+        success: function(data) {
+            if (!data.error) {
+                var newClass = (data.lucky === true) ? 'lucky' : 'unlucky';
+
+                container.attr('class', newClass);
+                container.find('.wrap').css({'opacity': 0})
+                    .text(data.ticket).animate({'opacity': 1}, 200);
+
+                stat.find('.count').text(data.stat.count);
+                stat.find('.lucky').text(data.stat.lucky);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error("Ошибка AJAX:", error);
+        }
+    });
+});
+</script>
+  </body>
+</html>

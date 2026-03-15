@@ -3416,3 +3416,9 @@ input:invalid {
   color: #000;
 }
 
+.item .well {
+  background-position:  -845px 0 !important;
+}
+#header .menu .item.sel .well, #header .menu .item:hover .well {
+  background-position: -845px -52px !important;
+}

@@ -24,15 +24,15 @@
 
 <script>
 const INFORMER_KEY = 'cookiesAccepted';
-const INFORMER_INTERVAL = 3 * 60 * 60 * 1000; // 3 часа в миллисекундах
+const INFORMER_INTERVAL = 3 * 60 * 60 * 1000;
 const informer = document.getElementById('cookiesInformer');
 const acceptBtn = document.getElementById('acceptCookies');
 
 function shouldShowInformer() {
   const record = localStorage.getItem(INFORMER_KEY);
-  if (!record) return true; // если записи нет — показываем
+  if (!record) return true; 
   const timestamp = parseInt(record, 10);
-  return Date.now() - timestamp > INFORMER_INTERVAL; // показываем, если прошло > 3ч
+  return Date.now() - timestamp > INFORMER_INTERVAL;
 }
 
 function showInformer() {
@@ -43,13 +43,11 @@ function hideInformer() {
   informer.style.display = 'none';
 }
 
-// обработка кнопки "Принять"
 acceptBtn.addEventListener('click', () => {
   localStorage.setItem(INFORMER_KEY, Date.now().toString());
   hideInformer();
 });
 
-// проверяем при загрузке страницы
 if (shouldShowInformer()) {
   showInformer();
 }

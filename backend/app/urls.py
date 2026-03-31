@@ -7,6 +7,8 @@ urlpatterns = [
     path("doings/", views.CheckList.as_view(), name = "doings"),
     path("wheel/", views.Wheel.as_view(), name = "wheel"),
     path("ask/", views.Ask.as_view(), name = "doings"),
+    path("privacy/", views.Privacy.as_view(), name = "privacy"),
+    
     path("password/", views.Password.as_view(), name = "password"),
     path("password/generate/", views.PasswordGenerateView.as_view(), name = "password-generate"),
     path("ask/generate/", views.AskGenerate.as_view(), name = "doings-generate"),

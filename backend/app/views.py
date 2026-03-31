@@ -256,6 +256,10 @@ class Ask(APIView):
     def get(self, request):
         return render(request, "ask.html", {"meta": get_random_meta()})
 
+class Privacy(APIView):
+    def get(self, request):
+        return render(request, "privacy.html")
+
 class NumberView(APIView):
     def get(self, request):
         value = random.randint(1, 100)
